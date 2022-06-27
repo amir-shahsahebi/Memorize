@@ -3,8 +3,15 @@ import Form from "./components/Form/Form";
 import Posts from "./components/Posts/Posts";
 import memories from "./images/memories.png";
 import useStyles from "./styles";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getPosts } from "./actions/posts";
 const App = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getPosts()); // we use action creators in dispatch and use useEffect for calling it
+  }, [dispatch]);
   return (
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
