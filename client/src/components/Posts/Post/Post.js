@@ -1,5 +1,5 @@
 import useStyles from "./styles";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   Card,
   CardActions,
@@ -15,7 +15,7 @@ import moment from "moment";
 import { deletePost, likePost } from "../../../actions/posts";
 
 const Post = ({ post, setCurrentId }) => {
-  const posts = useSelector((state) => state.posts);
+  // const posts = useSelector((state) => state.posts);
   // console.log(posts);
   const classes = useStyles();
   const dispatch = useDispatch();
